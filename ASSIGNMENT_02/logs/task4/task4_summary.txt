@@ -1,0 +1,204 @@
+ASSIGNMENT 02 - TASK 4
+REAL-TIME & OPTIMIZATION
+
+========================================
+1. REAL-TIME IMPLEMENTATION
+========================================
+
+Application: Sensor Monitoring System (SMS)
+Platform: Ubuntu Host x86_64
+Mode: SMS_HOST_SIMULATION
+
+Sensor interval: 500 ms
+
+Implemented features:
+- SCHED_FIFO priority 50
+- SCHED_OTHER priority 0
+- clock_nanosleep with TIMER_ABSTIME
+- CLOCK_MONOTONIC timing
+- mlockall(MCL_CURRENT | MCL_FUTURE)
+- 256 KB worker thread stacks
+- In-memory jitter collection
+- CSV export after Sensor Thread shutdown
+
+Both scheduling policies were verified
+using pthread_getschedparam().
+
+
+========================================
+2. EXPERIMENTAL SETUP
+========================================
+
+Duration per run: 510 seconds
+Sensor interval: 500 ms
+
+SCHED_OTHER:
+- Policy: SCHED_OTHER
+- Priority: 0
+- Samples: 1021
+- Jitter overflow: 0
+
+SCHED_FIFO:
+- Policy: SCHED_FIFO
+- Priority: 50
+- Samples: 1021
+- Jitter overflow: 0
+
+Both runs:
+- mlockall succeeded
+- No read errors
+- No dropped samples
+- No buffer overflows
+- No log write errors
+- Normal application shutdown
+
+
+========================================
+3. JITTER COMPARISON
+========================================
+
+Unit: microseconds (us)
+
+Metric          SCHED_OTHER    SCHED_FIFO
+-----------------------------------------
+Samples              1021           1021
+Min                46.220          6.777
+Average           228.032         17.005
+Max               953.648        330.581
+P99               845.043         59.992
+
+P99 improvement:
+92.90%
+
+P99 calculation method:
+Linear interpolation using N-1 indexing.
+
+Result:
+SCHED_FIFO reduced measured P99
+wake-up latency by 92.90% compared
+with SCHED_OTHER in this experiment.
+
+
+========================================
+4. HISTOGRAM ANALYSIS
+========================================
+
+SCHED_OTHER:
+50-100 us: 38.20%
+250-500 us: 40.35%
+500-1000 us: 4.31%
+
+SCHED_FIFO:
+0-25 us: 90.60%
+25-50 us: 6.07%
+50-100 us: 2.74%
+
+Interpretation:
+SCHED_FIFO concentrated most wake-up
+latencies below 25 microseconds.
+
+SCHED_OTHER showed a wider distribution
+with substantially higher tail latency.
+
+
+========================================
+5. DEADLINE ANALYSIS
+========================================
+
+Sensor interval:
+500 ms = 500000 us
+
+Maximum measured wake-up latency:
+
+SCHED_OTHER: 953.648 us
+SCHED_FIFO : 330.581 us
+
+Neither run recorded wake-up latency
+greater than the 500 ms period.
+
+Suggested evaluation threshold:
+Wake-up latency <= 1000 us (1 ms)
+
+Both policies satisfied this proposed
+threshold in the measured samples.
+
+Note:
+Wake-up latency alone is not sufficient
+to prove end-to-end deadline compliance.
+Execution and processing times would
+also need to be measured.
+
+
+========================================
+6. OPTIMIZATION PROPOSALS
+========================================
+
+1. Use SCHED_FIFO priority 50 for
+   the periodic Sensor Thread where
+   real-time privileges are available.
+
+2. Keep clock_nanosleep with
+   CLOCK_MONOTONIC and TIMER_ABSTIME
+   to avoid accumulated timing drift.
+
+3. Maintain memory locking where
+   supported and avoid unnecessary
+   memory allocation in the RT path.
+
+4. Avoid synchronous console output
+   and file I/O inside Sensor Thread.
+
+5. Add deadline-miss tracking and
+   measure end-to-end response time
+   in future improvements.
+
+
+========================================
+7. LIMITATIONS
+========================================
+
+Measurements were collected on Ubuntu
+Host using simulated sensor readings.
+
+They do not directly establish the same
+jitter performance on QEMU ARM hardware.
+
+Each scheduling policy was measured
+in one 510-second run.
+
+Background system load may differ
+between the two runs.
+
+Results demonstrate observed behavior
+under these experimental conditions,
+not guaranteed worst-case latency.
+
+
+========================================
+8. EVIDENCE FILES
+========================================
+
+logs/task4/jitter_other_1000.csv
+logs/task4/jitter_fifo_1000.csv
+
+logs/task4/rt_other_510s.txt
+logs/task4/rt_fifo_510s.txt
+
+logs/task4/jitter_comparison.txt
+logs/task4/task4_summary.txt
+
+
+========================================
+9. FINAL RESULT
+========================================
+
+Absolute-time scheduling: PASS
+Memory locking: PASS
+SCHED_OTHER test: PASS
+SCHED_FIFO test: PASS
+Jitter collection: PASS
+Min/Avg/Max/P99 analysis: PASS
+Text histogram: PASS
+Optimization proposals: COMPLETED
+
+Task 4 experimental requirements completed.

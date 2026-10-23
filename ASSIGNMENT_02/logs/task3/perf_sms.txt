@@ -1,0 +1,337 @@
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 51  of event 'cycles:u'
+# Event count (approx.): 1105911
+#
+# Overhead  Command  Shared Object         Symbol                           
+# ........  .......  ....................  .................................
+#
+    87.76%  sms_app  sms_app               [.] main
+            |
+            ---main
+               __libc_start_call_main
+               call_init (inlined)
+               __libc_start_main_impl (inlined)
+               _start
+
+     3.08%  sms_app  [vdso]                [.] 0x00000000000009b0
+            |
+            ---0x797fc73829b0
+               read_sensor
+               sensor_thread_func
+               start_thread
+               __clone3 (inlined)
+
+     2.31%  sms_app  libc.so.6             [.] __printf_fp_buffer_1.isra.0
+            |          
+            |--1.64%--__printf_fp_buffer_1 (inlined)
+            |          __printf_fp_l_buffer
+            |          __printf_buffer
+            |          __vfprintf_internal
+            |          __printf (inlined)
+            |          alert_thread_func
+            |          start_thread
+            |          __clone3 (inlined)
+            |          
+             --0.67%--hack_digit (inlined)
+                       __printf_fp_buffer_1 (inlined)
+                       __printf_fp_l_buffer
+                       __printf_buffer
+                       __vfprintf_internal
+                       __printf (inlined)
+                       alert_thread_func
+                       start_thread
+                       __clone3 (inlined)
+
+     1.62%  sms_app  libc.so.6             [.] __mpn_cmp
+            |
+            ---__mpn_cmp
+               __printf_fp_l_buffer
+               __printf_buffer
+               __vfprintf_internal
+               __printf (inlined)
+               processor_thread_func
+               start_thread
+               __clone3 (inlined)
+
+     1.45%  sms_app  ld-linux-x86-64.so.2  [.] init_cpu_features.constprop.0
+            |
+            ---get_extended_indices (inlined)
+               init_cpu_features (inlined)
+               _dl_sysdep_start
+               _dl_start_final (inlined)
+               _dl_start
+               _dl_start_user
+
+     1.31%  sms_app  [unknown]             [k] 0xffffffff88785d05
+            |
+            ---0xffffffff88785d05
+               0xffffffff89920b65
+               0xffffffff8820012b
+               __syscall_cancel_arch (inlined)
+               __clock_nanosleep (inlined)
+               __nanosleep
+               main
+               __libc_start_call_main
+               call_init (inlined)
+               __libc_start_main_impl (inlined)
+               _start
+
+     0.72%  sms_app  libc.so.6             [.] _IO_file_seek
+            |
+            ---_IO_file_seek
+               _IO_ftell
+               logger_thread_func
+               start_thread
+               __clone3 (inlined)
+
+     0.58%  sms_app  libc.so.6             [.] _IO_new_file_init_internal
+            |
+            ---_IO_new_file_init_internal
+               logger_thread_func
+               start_thread
+               __clone3 (inlined)
+
+     0.57%  sms_app  libc.so.6             [.] clock_nanosleep@GLIBC_2.2.5
+            |
+            ---__clock_nanosleep (inlined)
+               __nanosleep
+               main
+               __libc_start_call_main
+               call_init (inlined)
+               __libc_start_main_impl (inlined)
+               _start
+
+     0.52%  sms_app  libc.so.6             [.] __internal_syscall_cancel
+            |
+            ---__internal_syscall_cancel
+               __clock_nanosleep (inlined)
+               __nanosleep
+               main
+               __libc_start_call_main
+               call_init (inlined)
+               __libc_start_main_impl (inlined)
+               _start
+
+     0.02%  sms_app  libc.so.6             [.] clock_gettime@@GLIBC_2.17
+            |
+            ---__clock_gettime (inlined)
+               main
+               __libc_start_call_main
+               call_init (inlined)
+               __libc_start_main_impl (inlined)
+               _start
+
+     0.01%  sms_app  [unknown]             [k] 0xffffffff885481fc
+            |
+            ---0xffffffff885481fc
+               0xffffffff8820012b
+               start_thread
+               __clone3 (inlined)
+
+     0.01%  sms_app  libc.so.6             [.] __printf_buffer
+            |
+            ---__printf_buffer
+               |          
+               |--0.01%--__vfprintf_internal
+               |          __printf (inlined)
+               |          alert_thread_func
+               |          start_thread
+               |          __clone3 (inlined)
+               |          
+               |--0.00%--__printf_buffer_snprintf_done (inlined)
+               |          __vsnprintf_internal
+               |          __snprintf (inlined)
+               |          name_stack_maps
+               |          RSEQ_SELF (inlined)
+               |          rseq_register_current_thread (inlined)
+               |          start_thread
+               |          __clone3 (inlined)
+               |          
+                --0.00%--__snprintf (inlined)
+                          name_stack_maps
+                          RSEQ_SELF (inlined)
+                          rseq_register_current_thread (inlined)
+                          start_thread
+                          __clone3 (inlined)
+
+     0.01%  sms_app  ld-linux-x86-64.so.2  [.] _dl_start
+            |
+            ---elf_get_dynamic_info (inlined)
+               _dl_start
+               _dl_start_user
+
+     0.01%  sms_app  libc.so.6             [.] __printf_buffer_write
+            |
+            ---__printf_buffer_write
+               |          
+               |--0.01%--__printf_buffer_snprintf_done (inlined)
+               |          __vsnprintf_internal
+               |          __snprintf (inlined)
+               |          name_stack_maps
+               |          RSEQ_SELF (inlined)
+               |          rseq_register_current_thread (inlined)
+               |          start_thread
+               |          __clone3 (inlined)
+               |          
+                --0.00%--__printf_buffer
+                          __printf_buffer_snprintf_done (inlined)
+                          __vsnprintf_internal
+                          __snprintf (inlined)
+                          name_stack_maps
+                          RSEQ_SELF (inlined)
+                          rseq_register_current_thread (inlined)
+                          start_thread
+                          __clone3 (inlined)
+
+     0.01%  sms_app  libc.so.6             [.] _itoa_word
+            |
+            ---_itoa_word
+               __printf_buffer_snprintf_done (inlined)
+               __vsnprintf_internal
+               __snprintf (inlined)
+               name_stack_maps
+               RSEQ_SELF (inlined)
+               rseq_register_current_thread (inlined)
+               start_thread
+               __clone3 (inlined)
+
+     0.01%  sms_app  libc.so.6             [.] __vfprintf_internal
+            |
+            ---__vfprintf_internal
+               __fprintf (inlined)
+               logger_thread_func
+               start_thread
+               __clone3 (inlined)
+
+     0.00%  sms_app  [unknown]             [k] 0xffffffff88200b90
+            |
+            ---0xffffffff88200b90
+               |          
+               |--0.00%--__clone3 (inlined)
+               |          create_thread
+               |          |          
+               |          |--0.00%--internal_signal_restore_set (inlined)
+               |          |          __pthread_create_2_1 (inlined)
+               |          |          main
+               |          |          __libc_start_call_main
+               |          |          call_init (inlined)
+               |          |          __libc_start_main_impl (inlined)
+               |          |          _start
+               |          |          
+               |           --0.00%--__pthread_create_2_1 (inlined)
+               |                     main
+               |                     __libc_start_call_main
+               |                     call_init (inlined)
+               |                     __libc_start_main_impl (inlined)
+               |                     _start
+               |          
+                --0.00%--_start
+
+     0.00%  sms_app  libc.so.6             [.] __nanosleep
+            |
+            ---__nanosleep
+               main
+               __libc_start_call_main
+               call_init (inlined)
+               __libc_start_main_impl (inlined)
+               _start
+
+     0.00%  sms_app  libc.so.6             [.] __strchrnul_avx2
+            |
+            ---__strchrnul_avx2
+               |          
+               |--0.00%--__vfprintf_internal
+               |          __fprintf (inlined)
+               |          logger_thread_func
+               |          start_thread
+               |          __clone3 (inlined)
+               |          
+                --0.00%--__printf_buffer_snprintf_done (inlined)
+                          __vsnprintf_internal
+                          __snprintf (inlined)
+                          name_stack_maps
+                          RSEQ_SELF (inlined)
+                          rseq_register_current_thread (inlined)
+                          start_thread
+                          __clone3 (inlined)
+
+     0.00%  sms_app  libc.so.6             [.] __memmove_avx_unaligned_erms
+            |
+            ---__memmove_avx_unaligned_erms
+               __printf_buffer
+               __printf_buffer_snprintf_done (inlined)
+               __vsnprintf_internal
+               __snprintf (inlined)
+               name_stack_maps
+               RSEQ_SELF (inlined)
+               rseq_register_current_thread (inlined)
+               start_thread
+               __clone3 (inlined)
+
+     0.00%  sms_app  libc.so.6             [.] __strlen_avx2
+            |
+            ---__strlen_avx2
+               __vfprintf_internal
+               __fprintf (inlined)
+               logger_thread_func
+               start_thread
+               __clone3 (inlined)
+
+     0.00%  sms_app  libc.so.6             [.] __vsnprintf_internal
+            |
+            ---__printf_buffer_snprintf_done (inlined)
+               __vsnprintf_internal
+               __snprintf (inlined)
+               name_stack_maps
+               RSEQ_SELF (inlined)
+               rseq_register_current_thread (inlined)
+               start_thread
+               __clone3 (inlined)
+
+     0.00%  sms_app  libc.so.6             [.] printf
+            |
+            ---__printf (inlined)
+               alert_thread_func
+               start_thread
+               __clone3 (inlined)
+
+     0.00%  sms_app  sms_app               [.] alert_thread_func
+            |
+            ---alert_thread_func
+               start_thread
+               __clone3 (inlined)
+
+     0.00%  sms_app  [unknown]             [k] 0xffffffff8897dff6
+            |
+            ---0xffffffff8897dff6
+               0xffffffff8897e265
+               0xffffffff8854888b
+               0xffffffff89920b65
+               0xffffffff8820012b
+               rseq_register_current_thread (inlined)
+               start_thread
+               __clone3 (inlined)
+
+     0.00%  sms_app  [unknown]             [k] 0xffffffff89929301
+            |
+            ---0xffffffff89929301
+               _start
+
+     0.00%  sms_app  [unknown]             [k] 0xffffffff89929833
+            |
+            ---0xffffffff89929833
+               0xffffffff8992932e
+               0xffffffff88200bb7
+               rtld_timer_start (inlined)
+               _dl_start
+               _dl_start_user
+
+
+
+#
+# (Cannot load tips.txt file, please install perf!)
+#

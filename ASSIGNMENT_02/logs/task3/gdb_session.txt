@@ -1,0 +1,154 @@
+logging debugredirect:  off: Debug output will go to both the screen and the log file.
+logging enabled:  on: Logging is enabled.
+logging file:  The current logfile is "logs/task3/gdb_session.txt".
+logging overwrite:  on: Logging overwrites the log file.
+logging redirect:  off: Output will go to both the screen and the log file.
+Breakpoint 1 at 0x3a76: file app/shared_buffer.c, line 115.
+Breakpoint 2 at 0x392e: file app/shared_buffer.c, line 75.
+Num     Type           Disp Enb Address            What
+1       breakpoint     keep y   0x0000000000003a76 in shared_buffer_pop at app/shared_buffer.c:115
+2       breakpoint     keep y   0x000000000000392e in shared_buffer_push at app/shared_buffer.c:75
+Starting program: /home/khanh/embedded_asgn2/output/host/sms_app -i 500 -t 40 -h 80 -d 30 -v
+
+This GDB supports auto-downloading debuginfo from the following URLs:
+  <https://debuginfod.ubuntu.com>
+Debuginfod has been disabled.
+To make this setting permanent, add 'set debuginfod enabled off' to .gdbinit.
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/usr/lib/x86_64-linux-gnu/libthread_db.so.1".
+[New Thread 0x7ffff7bff6c0 (LWP 17687)]
+[New Thread 0x7ffff73fe6c0 (LWP 17688)]
+[New Thread 0x7ffff6bfd6c0 (LWP 17689)]
+[New Thread 0x7ffff63fc6c0 (LWP 17690)]
+[Switching to Thread 0x7ffff63fc6c0 (LWP 17690)]
+
+Thread 5 "sms_app" hit Breakpoint 2, shared_buffer_push (buffer=0x55555555c080 <shared_buffer>, sample=0x7ffff63fbe60) at app/shared_buffer.c:75
+75	    buffer->data[buffer->head] = *sample;
+  Id   Target Id                                   Frame 
+  1    Thread 0x7ffff7fa2740 (LWP 17684) "sms_app" __syscall_cancel_arch () at ../sysdeps/unix/sysv/linux/x86_64/syscall_cancel.S:56
+  2    Thread 0x7ffff7bff6c0 (LWP 17687) "sms_app" __syscall_cancel_arch () at ../sysdeps/unix/sysv/linux/x86_64/syscall_cancel.S:56
+  3    Thread 0x7ffff73fe6c0 (LWP 17688) "sms_app" __syscall_cancel_arch () at ../sysdeps/unix/sysv/linux/x86_64/syscall_cancel.S:56
+  4    Thread 0x7ffff6bfd6c0 (LWP 17689) "sms_app" __syscall_cancel_arch () at ../sysdeps/unix/sysv/linux/x86_64/syscall_cancel.S:56
+* 5    Thread 0x7ffff63fc6c0 (LWP 17690) "sms_app" shared_buffer_push (buffer=0x55555555c080 <shared_buffer>, sample=0x7ffff63fbe60) at app/shared_buffer.c:75
+
+Thread 5 (Thread 0x7ffff63fc6c0 (LWP 17690) "sms_app"):
+#0  shared_buffer_push (buffer=0x55555555c080 <shared_buffer>, sample=0x7ffff63fbe60) at app/shared_buffer.c:75
+#1  0x0000555555557e89 in sensor_thread_func (arg=0x7fffffffd9a0) at app/sensor_thread.c:123
+#2  0x00007ffff7ca3dfa in start_thread (arg=<optimized out>) at ./nptl/pthread_create.c:454
+#3  0x00007ffff7d375cc in __GI___clone3 () at ../sysdeps/unix/sysv/linux/x86_64/clone3.S:78
+
+Thread 4 (Thread 0x7ffff6bfd6c0 (LWP 17689) "sms_app"):
+#0  __syscall_cancel_arch () at ../sysdeps/unix/sysv/linux/x86_64/syscall_cancel.S:56
+#1  0x00007ffff7ca030c in __internal_syscall_cancel (a1=a1@entry=93824992264464, a2=<optimized out>, a3=a3@entry=0, a4=a4@entry=0, a5=a5@entry=0, a6=a6@entry=4294967295, nr=202) at ./nptl/cancellation.c:49
+#2  0x00007ffff7ca06e7 in __futex_abstimed_wait_common64 (private=0, futex_word=0x55555555c110 <shared_buffer+144>, expected=0, op=393, abstime=0x0, cancel=true) at ./nptl/futex-internal.c:57
+#3  __futex_abstimed_wait_common (futex_word=0x55555555c110 <shared_buffer+144>, expected=0, clockid=0, abstime=0x0, private=0, cancel=true) at ./nptl/futex-internal.c:87
+#4  __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x55555555c110 <shared_buffer+144>, expected=expected@entry=0, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0) at ./nptl/futex-internal.c:139
+#5  0x00007ffff7ca30c7 in __pthread_cond_wait_common (cond=<optimized out>, mutex=0x55555555c0c8 <shared_buffer+72>, clockid=0, abstime=0x0) at ./nptl/pthread_cond_wait.c:421
+#6  ___pthread_cond_wait (cond=<optimized out>, mutex=0x55555555c0c8 <shared_buffer+72>) at ./nptl/pthread_cond_wait.c:453
+#7  0x0000555555557a2c in shared_buffer_pop (buffer=0x55555555c080 <shared_buffer>, sample=0x7ffff6bfcd10) at app/shared_buffer.c:107
+#8  0x000055555555850e in processor_thread_func (arg=0x7fffffffda00) at app/processor_thread.c:63
+#9  0x00007ffff7ca3dfa in start_thread (arg=<optimized out>) at ./nptl/pthread_create.c:454
+#10 0x00007ffff7d375cc in __GI___clone3 () at ../sysdeps/unix/sysv/linux/x86_64/clone3.S:78
+
+Thread 3 (Thread 0x7ffff73fe6c0 (LWP 17688) "sms_app"):
+#0  __syscall_cancel_arch () at ../sysdeps/unix/sysv/linux/x86_64/syscall_cancel.S:56
+#1  0x00007ffff7ca039c in __internal_syscall_cancel (a1=<optimized out>, a2=<optimized out>, a3=<optimized out>, a4=<optimized out>, a5=<optimized out>, a6=0, nr=243) at ./nptl/cancellation.c:49
+#2  __syscall_cancel (a1=<optimized out>, a2=<optimized out>, a3=<optimized out>, a4=<optimized out>, a5=<optimized out>, a6=a6@entry=0, nr=243) at ./nptl/cancellation.c:75
+#3  0x00007ffff7caff3c in ___mq_timedreceive_time64 (mqdes=<optimized out>, msg_ptr=<optimized out>, msg_len=<optimized out>, msg_prio=<optimized out>, abs_timeout=<optimized out>) at ../sysdeps/unix/sysv/linux/mq_timedreceive.c:35
+#4  0x0000555555558601 in alert_thread_func (arg=0x7fffffffd9d0) at app/alert_thread.c:45
+#5  0x00007ffff7ca3dfa in start_thread (arg=<optimized out>) at ./nptl/pthread_create.c:454
+#6  0x00007ffff7d375cc in __GI___clone3 () at ../sysdeps/unix/sysv/linux/x86_64/clone3.S:78
+
+Thread 2 (Thread 0x7ffff7bff6c0 (LWP 17687) "sms_app"):
+#0  __syscall_cancel_arch () at ../sysdeps/unix/sysv/linux/x86_64/syscall_cancel.S:56
+#1  0x00007ffff7ca030c in __internal_syscall_cancel (a1=a1@entry=93824992330144, a2=<optimized out>, a3=a3@entry=4156550000, a4=a4@entry=140737349938032, a5=a5@entry=0, a6=a6@entry=4294967295, nr=202) at ./nptl/cancellation.c:49
+#2  0x00007ffff7ca06e7 in __futex_abstimed_wait_common64 (private=32767, futex_word=0x55555556c1a0 <log_queue+65664>, expected=4156550000, op=32374, abstime=0x7ffff7bfeb70, cancel=true) at ./nptl/futex-internal.c:57
+#3  __futex_abstimed_wait_common (futex_word=0x55555556c1a0 <log_queue+65664>, expected=4156550000, clockid=0, abstime=0x7ffff7bfeb70, private=32767, cancel=true) at ./nptl/futex-internal.c:87
+#4  __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x55555556c1a0 <log_queue+65664>, expected=expected@entry=0, clockid=clockid@entry=0, abstime=abstime@entry=0x7ffff7bfece0, private=private@entry=0) at ./nptl/futex-internal.c:139
+#5  0x00007ffff7ca3382 in __pthread_cond_wait_common (cond=0x55555556c180 <log_queue+65632>, mutex=0x55555556c158 <log_queue+65592>, clockid=<optimized out>, abstime=0x7ffff7bfece0) at ./nptl/pthread_cond_wait.c:421
+#6  ___pthread_cond_timedwait64 (cond=0x55555556c180 <log_queue+65632>, mutex=0x55555556c158 <log_queue+65592>, abstime=0x7ffff7bfece0) at ./nptl/pthread_cond_wait.c:478
+#7  0x0000555555558b3d in log_queue_pop (queue=0x55555555c120 <log_queue>, message=0x7ffff7bfed80) at app/logger_thread.c:99
+#8  0x0000555555559174 in logger_thread_func (arg=0x7fffffffd970) at app/logger_thread.c:238
+#9  0x00007ffff7ca3dfa in start_thread (arg=<optimized out>) at ./nptl/pthread_create.c:454
+#10 0x00007ffff7d375cc in __GI___clone3 () at ../sysdeps/unix/sysv/linux/x86_64/clone3.S:78
+
+Thread 1 (Thread 0x7ffff7fa2740 (LWP 17684) "sms_app"):
+#0  __syscall_cancel_arch () at ../sysdeps/unix/sysv/linux/x86_64/syscall_cancel.S:56
+#1  0x00007ffff7ca030c in __internal_syscall_cancel (a1=a1@entry=0, a2=a2@entry=0, a3=<optimized out>, a4=<optimized out>, a5=a5@entry=0, a6=a6@entry=0, nr=230) at ./nptl/cancellation.c:49
+#2  0x00007ffff7cf5af2 in __GI___clock_nanosleep (clock_id=<optimized out>, clock_id@entry=0, flags=flags@entry=0, req=<optimized out>, rem=<optimized out>) at ../sysdeps/unix/sysv/linux/clock_nanosleep.c:48
+#3  0x00007ffff7d03707 in __GI___nanosleep (req=<optimized out>, rem=<optimized out>) at ../sysdeps/unix/sysv/linux/nanosleep.c:25
+#4  0x000055555555738c in main (argc=10, argv=0x7fffffffdc58) at app/main.c:401
+$1 = 0
+$2 = 64
+$3 = 0
+$4 = 0
+$5 = {timestamp_ms = 4951955, temperature = 15, humidity = 30}
+Mode for locking scheduler during execution is "on".
+72	        return 0;
+73	    }
+74	
+75	    buffer->data[buffer->head] = *sample;
+76	
+77	    buffer->head = (buffer->head + 1) % buffer->capacity;
+78	
+79	    buffer->count++;
+80	    buffer->total_produced++;
+81	
+82	    pthread_cond_signal(&buffer->not_empty);
+83	
+84	    pthread_mutex_unlock(&buffer->mutex);
+85	
+77	    buffer->head = (buffer->head + 1) % buffer->capacity;
+$6 = {timestamp_ms = 4951955, temperature = 15, humidity = 30}
+79	    buffer->count++;
+80	    buffer->total_produced++;
+82	    pthread_cond_signal(&buffer->not_empty);
+$7 = 1
+$8 = 1
+$9 = 0
+$10 = 1
+84	    pthread_mutex_unlock(&buffer->mutex);
+86	    return 1;
+Mode for locking scheduler during execution is "off".
+Continuing.
+[Switching to Thread 0x7ffff6bfd6c0 (LWP 17689)]
+
+Thread 4 "sms_app" hit Breakpoint 1, shared_buffer_pop (buffer=0x55555555c080 <shared_buffer>, sample=0x7ffff6bfcd10) at app/shared_buffer.c:115
+115	    *sample = buffer->data[buffer->tail];
+  Id   Target Id                                   Frame 
+  1    Thread 0x7ffff7fa2740 (LWP 17684) "sms_app" __syscall_cancel_arch () at ../sysdeps/unix/sysv/linux/x86_64/syscall_cancel.S:56
+  2    Thread 0x7ffff7bff6c0 (LWP 17687) "sms_app" __syscall_cancel_arch () at ../sysdeps/unix/sysv/linux/x86_64/syscall_cancel.S:56
+  3    Thread 0x7ffff73fe6c0 (LWP 17688) "sms_app" __syscall_cancel_arch () at ../sysdeps/unix/sysv/linux/x86_64/syscall_cancel.S:56
+* 4    Thread 0x7ffff6bfd6c0 (LWP 17689) "sms_app" shared_buffer_pop (buffer=0x55555555c080 <shared_buffer>, sample=0x7ffff6bfcd10) at app/shared_buffer.c:115
+  5    Thread 0x7ffff63fc6c0 (LWP 17690) "sms_app" __syscall_cancel_arch () at ../sysdeps/unix/sysv/linux/x86_64/syscall_cancel.S:56
+$11 = 1
+$12 = 1
+$13 = 0
+$14 = 1
+$15 = 0
+$16 = {timestamp_ms = 4951955, temperature = 15, humidity = 30}
+Mode for locking scheduler during execution is "on".
+117	    buffer->tail = (buffer->tail + 1) % buffer->capacity;
+$17 = (SensorData *) 0x7ffff6bfcd10
+$18 = {timestamp_ms = 4951955, temperature = 15, humidity = 30}
+119	    buffer->count--;
+120	    buffer->total_consumed++;
+122	    pthread_mutex_unlock(&buffer->mutex);
+$19 = 0
+$20 = 1
+$21 = 1
+$22 = 1
+$23 = 1
+124	    return 1;
+Mode for locking scheduler during execution is "off".
+Num     Type           Disp Enb Address            What
+1       breakpoint     keep n   0x0000555555557a76 in shared_buffer_pop at app/shared_buffer.c:115
+	breakpoint already hit 1 time
+2       breakpoint     keep n   0x000055555555792e in shared_buffer_push at app/shared_buffer.c:75
+	breakpoint already hit 1 time
+Continuing.
+[Thread 0x7ffff63fc6c0 (LWP 17690) exited]
+[Thread 0x7ffff6bfd6c0 (LWP 17689) exited]
+[Thread 0x7ffff73fe6c0 (LWP 17688) exited]
+[Thread 0x7ffff7bff6c0 (LWP 17687) exited]
+[Inferior 1 (process 17684) exited normally]

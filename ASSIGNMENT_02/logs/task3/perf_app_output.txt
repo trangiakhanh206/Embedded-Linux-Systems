@@ -1,0 +1,134 @@
+
+=== SENSOR MONITORING SYSTEM ===
+Interval    : 500 ms
+Temp limit  : 40.0 C
+Humid limit : 80.0 %
+Duration    : 35 seconds
+[APP] Verbose option enabled
+[APP] HOST SIMULATION MODE enabled
+[APP] Simulated sensor interval: 500 ms
+[ALERT] Thread started
+[PROCESSOR] Thread started
+[RT] Sensor Thread: SCHED_FIFO priority 50
+[APP] All four threads started
+[SENSOR] Thread started, interval=500 ms
+[PROCESSOR] Time=7149430 Temp=15.0 AvgTemp=15.0 Humid=30.0 AvgHumid=30.0
+[LOGGER] Thread started, path=/tmp/sms.log
+[PROCESSOR] Time=7149930 Temp=16.7 AvgTemp=15.9 Humid=32.3 AvgHumid=31.1
+[PROCESSOR] Time=7150431 Temp=18.4 AvgTemp=16.7 Humid=34.6 AvgHumid=32.3
+[PROCESSOR] Time=7150931 Temp=20.1 AvgTemp=17.5 Humid=36.9 AvgHumid=33.4
+[PROCESSOR] Time=7151431 Temp=21.8 AvgTemp=18.4 Humid=39.2 AvgHumid=34.6
+[PROCESSOR] Time=7151931 Temp=23.5 AvgTemp=19.2 Humid=41.5 AvgHumid=35.7
+[PROCESSOR] Time=7152432 Temp=25.2 AvgTemp=20.1 Humid=43.8 AvgHumid=36.9
+[PROCESSOR] Time=7152932 Temp=26.9 AvgTemp=20.9 Humid=46.1 AvgHumid=38.0
+[PROCESSOR] Time=7153432 Temp=28.6 AvgTemp=21.8 Humid=48.4 AvgHumid=39.2
+[PROCESSOR] Time=7153932 Temp=30.3 AvgTemp=22.6 Humid=50.7 AvgHumid=40.3
+[PROCESSOR] Time=7154433 Temp=32.0 AvgTemp=24.4 Humid=53.0 AvgHumid=42.7
+[PROCESSOR] Time=7154933 Temp=33.7 AvgTemp=26.0 Humid=55.3 AvgHumid=45.0
+[PROCESSOR] Time=7155434 Temp=35.4 AvgTemp=27.8 Humid=57.6 AvgHumid=47.2
+[PROCESSOR] Time=7155934 Temp=37.1 AvgTemp=29.5 Humid=59.9 AvgHumid=49.5
+[PROCESSOR] Time=7156434 Temp=38.8 AvgTemp=31.1 Humid=62.2 AvgHumid=51.8
+[PROCESSOR] Time=7156934 Temp=40.5 AvgTemp=32.8 Humid=64.5 AvgHumid=54.2
+[ALERT][7156934] TYPE=TEMP_HIGH VALUE=40.5 THRESHOLD=40.0
+[PROCESSOR] Time=7157435 Temp=42.2 AvgTemp=34.5 Humid=66.8 AvgHumid=56.5
+[ALERT][7157435] TYPE=TEMP_HIGH VALUE=42.2 THRESHOLD=40.0
+[PROCESSOR] Time=7157935 Temp=43.9 AvgTemp=36.2 Humid=69.1 AvgHumid=58.8
+[ALERT][7157935] TYPE=TEMP_HIGH VALUE=43.9 THRESHOLD=40.0
+[PROCESSOR] Time=7158435 Temp=15.5 AvgTemp=34.9 Humid=71.4 AvgHumid=61.0
+[PROCESSOR] Time=7158936 Temp=17.2 AvgTemp=33.6 Humid=73.7 AvgHumid=63.3
+[PROCESSOR] Time=7159436 Temp=18.9 AvgTemp=32.3 Humid=76.0 AvgHumid=65.7
+[PROCESSOR] Time=7159936 Temp=20.6 AvgTemp=31.0 Humid=78.3 AvgHumid=67.9
+[PROCESSOR] Time=7160436 Temp=22.3 AvgTemp=29.7 Humid=80.6 AvgHumid=70.2
+[ALERT][7160436] TYPE=HUMID_HIGH VALUE=80.6 THRESHOLD=80.0
+[PROCESSOR] Time=7160936 Temp=24.0 AvgTemp=28.4 Humid=82.9 AvgHumid=72.6
+[ALERT][7160936] TYPE=HUMID_HIGH VALUE=82.9 THRESHOLD=80.0
+[PROCESSOR] Time=7161437 Temp=25.7 AvgTemp=27.1 Humid=85.2 AvgHumid=74.8
+[ALERT][7161437] TYPE=HUMID_HIGH VALUE=85.2 THRESHOLD=80.0
+[PROCESSOR] Time=7161937 Temp=27.4 AvgTemp=25.8 Humid=87.5 AvgHumid=77.2
+[ALERT][7161937] TYPE=HUMID_HIGH VALUE=87.5 THRESHOLD=80.0
+[PROCESSOR] Time=7162437 Temp=29.1 AvgTemp=24.5 Humid=89.8 AvgHumid=79.4
+[ALERT][7162437] TYPE=HUMID_HIGH VALUE=89.8 THRESHOLD=80.0
+[PROCESSOR] Time=7162938 Temp=30.8 AvgTemp=23.1 Humid=32.0 AvgHumid=75.7
+[PROCESSOR] Time=7163438 Temp=32.5 AvgTemp=24.8 Humid=34.3 AvgHumid=72.0
+[PROCESSOR] Time=7163938 Temp=34.2 AvgTemp=26.5 Humid=36.6 AvgHumid=68.3
+[PROCESSOR] Time=7164439 Temp=35.9 AvgTemp=28.2 Humid=38.9 AvgHumid=64.6
+[PROCESSOR] Time=7164939 Temp=37.6 AvgTemp=30.0 Humid=41.2 AvgHumid=60.9
+[PROCESSOR] Time=7165439 Temp=39.3 AvgTemp=31.6 Humid=43.5 AvgHumid=57.2
+[PROCESSOR] Time=7165940 Temp=41.0 AvgTemp=33.3 Humid=45.8 AvgHumid=53.5
+[ALERT][7165940] TYPE=TEMP_HIGH VALUE=41.0 THRESHOLD=40.0
+[PROCESSOR] Time=7166440 Temp=42.7 AvgTemp=35.0 Humid=48.1 AvgHumid=49.8
+[ALERT][7166440] TYPE=TEMP_HIGH VALUE=42.7 THRESHOLD=40.0
+[PROCESSOR] Time=7166940 Temp=44.4 AvgTemp=36.8 Humid=50.4 AvgHumid=46.1
+[ALERT][7166940] TYPE=TEMP_HIGH VALUE=44.4 THRESHOLD=40.0
+[PROCESSOR] Time=7167440 Temp=16.0 AvgTemp=35.4 Humid=52.7 AvgHumid=42.4
+[PROCESSOR] Time=7167941 Temp=17.7 AvgTemp=34.1 Humid=55.0 AvgHumid=44.7
+[PROCESSOR] Time=7168441 Temp=19.4 AvgTemp=32.8 Humid=57.3 AvgHumid=47.0
+[PROCESSOR] Time=7168941 Temp=21.1 AvgTemp=31.5 Humid=59.6 AvgHumid=49.3
+[PROCESSOR] Time=7169441 Temp=22.8 AvgTemp=30.2 Humid=61.9 AvgHumid=51.6
+[PROCESSOR] Time=7169942 Temp=24.5 AvgTemp=28.9 Humid=64.2 AvgHumid=53.9
+[PROCESSOR] Time=7170442 Temp=26.2 AvgTemp=27.6 Humid=66.5 AvgHumid=56.2
+[PROCESSOR] Time=7170943 Temp=27.9 AvgTemp=26.3 Humid=68.8 AvgHumid=58.5
+[PROCESSOR] Time=7171443 Temp=29.6 AvgTemp=25.0 Humid=71.1 AvgHumid=60.8
+[PROCESSOR] Time=7171943 Temp=31.3 AvgTemp=23.6 Humid=73.4 AvgHumid=63.1
+[PROCESSOR] Time=7172444 Temp=33.0 AvgTemp=25.3 Humid=75.7 AvgHumid=65.4
+[PROCESSOR] Time=7172944 Temp=34.7 AvgTemp=27.0 Humid=78.0 AvgHumid=67.7
+[PROCESSOR] Time=7173444 Temp=36.4 AvgTemp=28.8 Humid=80.3 AvgHumid=70.0
+[ALERT][7173444] TYPE=HUMID_HIGH VALUE=80.3 THRESHOLD=80.0
+[PROCESSOR] Time=7173945 Temp=38.1 AvgTemp=30.5 Humid=82.6 AvgHumid=72.3
+[ALERT][7173945] TYPE=HUMID_HIGH VALUE=82.6 THRESHOLD=80.0
+[PROCESSOR] Time=7174445 Temp=39.8 AvgTemp=32.2 Humid=84.9 AvgHumid=74.6
+[ALERT][7174445] TYPE=HUMID_HIGH VALUE=84.9 THRESHOLD=80.0
+[PROCESSOR] Time=7174945 Temp=41.5 AvgTemp=33.8 Humid=87.2 AvgHumid=76.9
+[ALERT][7174945] TYPE=TEMP_HIGH VALUE=41.5 THRESHOLD=40.0
+[ALERT][7174945] TYPE=HUMID_HIGH VALUE=87.2 THRESHOLD=80.0
+[PROCESSOR] Time=7175446 Temp=43.2 AvgTemp=35.5 Humid=89.5 AvgHumid=79.2
+[ALERT][7175446] TYPE=TEMP_HIGH VALUE=43.2 THRESHOLD=40.0
+[ALERT][7175446] TYPE=HUMID_HIGH VALUE=89.5 THRESHOLD=80.0
+[PROCESSOR] Time=7175946 Temp=44.9 AvgTemp=37.2 Humid=31.7 AvgHumid=75.4
+[ALERT][7175946] TYPE=TEMP_HIGH VALUE=44.9 THRESHOLD=40.0
+[PROCESSOR] Time=7176446 Temp=16.5 AvgTemp=35.9 Humid=34.0 AvgHumid=71.7
+[PROCESSOR] Time=7176947 Temp=18.2 AvgTemp=34.6 Humid=36.3 AvgHumid=68.0
+[PROCESSOR] Time=7177448 Temp=19.9 AvgTemp=33.3 Humid=38.6 AvgHumid=64.3
+[PROCESSOR] Time=7177948 Temp=21.6 AvgTemp=32.0 Humid=40.9 AvgHumid=60.6
+[PROCESSOR] Time=7178448 Temp=23.3 AvgTemp=30.7 Humid=43.2 AvgHumid=56.9
+[PROCESSOR] Time=7178948 Temp=25.0 AvgTemp=29.4 Humid=45.5 AvgHumid=53.2
+[PROCESSOR] Time=7179449 Temp=26.7 AvgTemp=28.1 Humid=47.8 AvgHumid=49.5
+[PROCESSOR] Time=7179949 Temp=28.4 AvgTemp=26.8 Humid=50.1 AvgHumid=45.8
+[PROCESSOR] Time=7180449 Temp=30.1 AvgTemp=25.5 Humid=52.4 AvgHumid=42.1
+[PROCESSOR] Time=7180949 Temp=31.8 AvgTemp=24.1 Humid=54.7 AvgHumid=44.4
+[PROCESSOR] Time=7181450 Temp=33.5 AvgTemp=25.9 Humid=57.0 AvgHumid=46.7
+[PROCESSOR] Time=7181950 Temp=35.2 AvgTemp=27.5 Humid=59.3 AvgHumid=49.0
+[PROCESSOR] Time=7182450 Temp=36.9 AvgTemp=29.2 Humid=61.6 AvgHumid=51.3
+[PROCESSOR] Time=7182951 Temp=38.6 AvgTemp=31.0 Humid=63.9 AvgHumid=53.6
+[PROCESSOR] Time=7183451 Temp=40.3 AvgTemp=32.7 Humid=66.2 AvgHumid=55.9
+[ALERT][7183451] TYPE=TEMP_HIGH VALUE=40.3 THRESHOLD=40.0
+[PROCESSOR] Time=7183952 Temp=42.0 AvgTemp=34.3 Humid=68.5 AvgHumid=58.2
+[ALERT][7183952] TYPE=TEMP_HIGH VALUE=42.0 THRESHOLD=40.0
+
+[APP] Shutting down...
+[SENSOR] Thread stopped
+[PROCESSOR] Thread stopped
+[ALERT] Shutdown message received
+[ALERT] Thread stopped
+[LOGGER] Thread stopped
+
+=== SMS Final Statistics ===
+Samples read      : 70
+Read errors       : 0
+Dropped samples   : 0
+Samples produced  : 70
+Samples consumed  : 70
+Buffer overflows  : 0
+Samples processed : 70
+Alerts generated  : 21
+Alerts received   : 21
+TEMP_HIGH         : 11
+HUMID_HIGH        : 10
+TEMP_SPIKE        : 0
+Log messages      : 91
+Log rotations     : 0
+Log write errors  : 0
+Log queue dropped : 0
+[APP] Shutdown complete
+[ perf record: Woken up 1 times to write data ]
+[ perf record: Captured and wrote 0,007 MB logs/task3/perf.data (51 samples) ]

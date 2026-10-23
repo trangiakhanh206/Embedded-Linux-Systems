@@ -1,0 +1,25 @@
+=== Perf Target App - LAB-03 ===
+[1] CPU-intensive computation...
+  Result: 11433083166.074631
+[2] Linear search (1000 times)...
+[3] I/O intensive (write 10000 lines)...
+Done!
+
+ Performance counter stats for 'su khanh -c /home/khanh/embedded_lab3/apps/perf_target':
+
+                17      context-switches                 #    356,0 cs/sec  cs_per_second     
+                 3      cpu-migrations                   #     62,8 migrations/sec  migrations_per_second
+             1.154      page-faults                      #  24164,2 faults/sec  page_faults_per_second
+             47,76 msec task-clock                       #      0,6 CPUs  CPUs_utilized       
+           643.233      branch-misses                    #      1,2 %  branch_miss_rate         (48,19%)
+        57.084.338      branches                         #   1195,3 M/sec  branch_frequency     (48,19%)
+       128.699.828      cpu-cycles                       #      2,7 GHz  cycles_frequency       (66,97%)
+       399.674.205      instructions                     #      3,0 instructions  insn_per_cycle  (52,86%)
+        14.384.567      stalled-cycles-frontend          #     0,11 frontend_cycles_idle        (52,85%)
+
+       0,074034784 seconds time elapsed
+
+       0,036927000 seconds user
+       0,013498000 seconds sys
+
+

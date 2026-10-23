@@ -1,0 +1,4 @@
+#!/bin/sh
+
+# Start BusyBox init
+exec /sbin/init

@@ -1,0 +1,5 @@
+=== T = 5 seconds ===
+VmSize:	   34620 kB
+VmRSS:	       4 kB
+VmData:	   33116 kB
+VmStk:	     132 kB

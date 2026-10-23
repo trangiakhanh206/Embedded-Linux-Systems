@@ -1,0 +1,397 @@
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 62  of event 'cycles'
+# Event count (approx.): 9534048
+#
+# Overhead  Command  Shared Object      Symbol                         
+# ........  .......  .................  ...............................
+#
+    28.40%  sms_app  [kernel.kallsyms]  [k] native_write_msr
+            |
+            ---native_write_msr
+               amd_pmu_disable_all
+               x86_pmu_disable
+               perf_ctx_disable
+               perf_event_context_sched_out
+               __perf_event_task_sched_out
+               prepare_task_switch
+               __schedule
+               schedule
+               do_nanosleep
+               hrtimer_nanosleep
+               common_nsleep
+               __x64_sys_clock_nanosleep
+               x64_sys_call
+               do_syscall_64
+               entry_SYSCALL_64_after_hwframe
+               __syscall_cancel_arch (inlined)
+               __clock_nanosleep (inlined)
+               __nanosleep
+               main
+               __libc_start_call_main
+               call_init (inlined)
+               __libc_start_main_impl (inlined)
+               _start
+
+    23.74%  sms_app  libc.so.6          [.] __strlen_avx2
+            |
+            ---__strlen_avx2
+               __printf_buffer
+               __printf_buffer_snprintf_done (inlined)
+               __vsnprintf_internal
+               __snprintf (inlined)
+               processor_thread_func
+               start_thread
+               __clone3 (inlined)
+
+    22.16%  sms_app  [kernel.kallsyms]  [k] dequeue_entity
+            |
+            ---dequeue_entity
+               dequeue_entities
+               dequeue_task_fair
+               dequeue_task
+               try_to_block_task.constprop.0.isra.0
+               __schedule
+               schedule
+               do_nanosleep
+               hrtimer_nanosleep
+               common_nsleep
+               __x64_sys_clock_nanosleep
+               x64_sys_call
+               do_syscall_64
+               entry_SYSCALL_64_after_hwframe
+               __syscall_cancel_arch (inlined)
+               __clock_nanosleep (inlined)
+               __nanosleep
+               main
+               __libc_start_call_main
+               call_init (inlined)
+               __libc_start_main_impl (inlined)
+               _start
+
+     6.85%  sms_app  [kernel.kallsyms]  [k] do_nanosleep
+            |
+            ---do_nanosleep
+               hrtimer_nanosleep
+               common_nsleep
+               __x64_sys_clock_nanosleep
+               x64_sys_call
+               do_syscall_64
+               entry_SYSCALL_64_after_hwframe
+               __syscall_cancel_arch (inlined)
+               __clock_nanosleep (inlined)
+               __nanosleep
+               main
+               __libc_start_call_main
+               call_init (inlined)
+               __libc_start_main_impl (inlined)
+               _start
+
+     6.62%  sms_app  [kernel.kallsyms]  [k] update_load_avg
+            |
+            ---update_load_avg
+               dequeue_entity
+               dequeue_entities
+               dequeue_task_fair
+               dequeue_task
+               try_to_block_task.constprop.0.isra.0
+               __schedule
+               schedule
+               do_nanosleep
+               hrtimer_nanosleep
+               common_nsleep
+               __x64_sys_clock_nanosleep
+               x64_sys_call
+               do_syscall_64
+               entry_SYSCALL_64_after_hwframe
+               __syscall_cancel_arch (inlined)
+               __clock_nanosleep (inlined)
+               __nanosleep
+               main
+               __libc_start_call_main
+               call_init (inlined)
+               __libc_start_main_impl (inlined)
+               _start
+
+     6.27%  sms_app  [kernel.kallsyms]  [k] dequeue_task
+            |
+            ---dequeue_task
+               try_to_block_task.constprop.0.isra.0
+               __schedule
+               schedule
+               do_nanosleep
+               hrtimer_nanosleep
+               common_nsleep
+               __x64_sys_clock_nanosleep
+               x64_sys_call
+               do_syscall_64
+               entry_SYSCALL_64_after_hwframe
+               __syscall_cancel_arch (inlined)
+               __clock_nanosleep (inlined)
+               __nanosleep
+               main
+               __libc_start_call_main
+               call_init (inlined)
+               __libc_start_main_impl (inlined)
+               _start
+
+     4.20%  sms_app  [kernel.kallsyms]  [k] __x64_sys_clock_nanosleep
+            |
+            ---__x64_sys_clock_nanosleep
+               x64_sys_call
+               do_syscall_64
+               entry_SYSCALL_64_after_hwframe
+               __syscall_cancel_arch (inlined)
+               __clock_nanosleep (inlined)
+               __nanosleep
+               main
+               __libc_start_call_main
+               call_init (inlined)
+               __libc_start_main_impl (inlined)
+               _start
+
+     0.50%  sms_app  [kernel.kallsyms]  [k] do_syscall_64
+            |
+            ---do_syscall_64
+               entry_SYSCALL_64_after_hwframe
+               start_thread
+               __clone3 (inlined)
+
+     0.36%  sms_app  [kernel.kallsyms]  [k] __perf_event_task_sched_in
+            |
+            ---__perf_event_task_sched_in
+               finish_task_switch.isra.0
+               |          
+               |--0.22%--schedule_tail
+               |          ret_from_fork
+               |          ret_from_fork_asm
+               |          __clone3 (inlined)
+               |          create_thread
+               |          |          
+               |          |--0.22%--__pthread_create_2_1 (inlined)
+               |          |          main
+               |          |          __libc_start_call_main
+               |          |          call_init (inlined)
+               |          |          __libc_start_main_impl (inlined)
+               |          |          _start
+               |          |          
+               |           --0.00%--internal_signal_restore_set (inlined)
+               |                     __pthread_create_2_1 (inlined)
+               |                     main
+               |                     __libc_start_call_main
+               |                     call_init (inlined)
+               |                     __libc_start_main_impl (inlined)
+               |                     _start
+               |          
+                --0.14%--__schedule
+                          schedule
+                          |          
+                          |--0.09%--irqentry_exit
+                          |          sysvec_reschedule_ipi
+                          |          asm_sysvec_reschedule_ipi
+                          |          __internal_syscall_cancel
+                          |          __clock_nanosleep (inlined)
+                          |          __nanosleep
+                          |          main
+                          |          __libc_start_call_main
+                          |          call_init (inlined)
+                          |          __libc_start_main_impl (inlined)
+                          |          _start
+                          |          
+                          |--0.05%--do_nanosleep
+                          |          hrtimer_nanosleep
+                          |          common_nsleep
+                          |          __x64_sys_clock_nanosleep
+                          |          x64_sys_call
+                          |          do_syscall_64
+                          |          entry_SYSCALL_64_after_hwframe
+                          |          __syscall_cancel_arch (inlined)
+                          |          __clock_nanosleep (inlined)
+                          |          __nanosleep
+                          |          main
+                          |          __libc_start_call_main
+                          |          call_init (inlined)
+                          |          __libc_start_main_impl (inlined)
+                          |          _start
+                          |          
+                           --0.00%--futex_do_wait
+                                     __futex_wait
+                                     futex_wait
+                                     do_futex
+                                     __x64_sys_futex
+                                     x64_sys_call
+                                     do_syscall_64
+                                     entry_SYSCALL_64_after_hwframe
+                                     __syscall_cancel_arch (inlined)
+                                     __futex_abstimed_wait_common (inlined)
+                                     __futex_abstimed_wait_cancelable64 (inlined)
+                                     __pthread_cond_wait_common (inlined)
+                                     ___pthread_cond_wait (inlined)
+                                     shared_buffer_pop
+                                     processor_thread_func
+                                     start_thread
+                                     __clone3 (inlined)
+
+     0.24%  sms_app  [kernel.kallsyms]  [k] calculate_sigpending
+            |
+            ---calculate_sigpending
+               ret_from_fork
+               ret_from_fork_asm
+               __clone3 (inlined)
+               create_thread
+               setup_stack_prot (inlined)
+               allocate_stack (inlined)
+               __pthread_create_2_1 (inlined)
+               main
+               __libc_start_call_main
+               call_init (inlined)
+               __libc_start_main_impl (inlined)
+               _start
+
+     0.24%  sms_app  [kernel.kallsyms]  [k] schedule_tail
+            |
+            ---schedule_tail
+               ret_from_fork
+               ret_from_fork_asm
+               __clone3 (inlined)
+               create_thread
+               allocate_stack (inlined)
+               __pthread_create_2_1 (inlined)
+               main
+               __libc_start_call_main
+               call_init (inlined)
+               __libc_start_main_impl (inlined)
+               _start
+
+     0.14%  perf-ex  [kernel.kallsyms]  [k] perf_ctx_unlock
+            |
+            ---perf_ctx_unlock
+               perf_event_enable_on_exec
+               perf_event_exec
+               begin_new_exec
+               load_elf_binary
+               exec_binprm
+               bprm_execve.part.0
+               bprm_execve
+               do_execveat_common.isra.0
+               __x64_sys_execve
+               x64_sys_call
+               do_syscall_64
+               entry_SYSCALL_64_after_hwframe
+               0x72f104cf7f0b
+
+     0.13%  sms_app  [kernel.kallsyms]  [k] restore_fpregs_from_fpstate
+            |
+            ---restore_fpregs_from_fpstate
+               switch_fpu_return
+               arch_exit_to_user_mode_prepare.isra.0
+               do_syscall_64
+               entry_SYSCALL_64_after_hwframe
+               __syscall_cancel_arch (inlined)
+               __futex_abstimed_wait_common (inlined)
+               __futex_abstimed_wait_cancelable64 (inlined)
+               __pthread_cond_wait_common (inlined)
+               ___pthread_cond_wait (inlined)
+               shared_buffer_pop
+               processor_thread_func
+               start_thread
+               __clone3 (inlined)
+
+     0.11%  sms_app  [kernel.kallsyms]  [k] schedule
+            |
+            ---schedule
+               do_nanosleep
+               hrtimer_nanosleep
+               common_nsleep
+               __x64_sys_clock_nanosleep
+               x64_sys_call
+               do_syscall_64
+               entry_SYSCALL_64_after_hwframe
+               __syscall_cancel_arch (inlined)
+               __clock_nanosleep (inlined)
+               __nanosleep
+               main
+               __libc_start_call_main
+               call_init (inlined)
+               __libc_start_main_impl (inlined)
+               _start
+
+     0.04%  sms_app  [kernel.kallsyms]  [k] perf_ctx_enable
+            |
+            ---perf_ctx_enable
+               __perf_event_task_sched_in
+               finish_task_switch.isra.0
+               __schedule
+               schedule
+               do_nanosleep
+               hrtimer_nanosleep
+               common_nsleep
+               __x64_sys_clock_nanosleep
+               x64_sys_call
+               do_syscall_64
+               entry_SYSCALL_64_after_hwframe
+               __syscall_cancel_arch (inlined)
+               __clock_nanosleep (inlined)
+               __nanosleep
+               main
+               __libc_start_call_main
+               call_init (inlined)
+               __libc_start_main_impl (inlined)
+               _start
+
+     0.00%  sms_app  [kernel.kallsyms]  [k] _raw_spin_unlock
+            |
+            ---_raw_spin_unlock
+               __perf_event_task_sched_in
+               finish_task_switch.isra.0
+               schedule_tail
+               ret_from_fork
+               ret_from_fork_asm
+               __clone3 (inlined)
+               create_thread
+               |          
+               |--0.00%--allocate_stack (inlined)
+               |          __pthread_create_2_1 (inlined)
+               |          main
+               |          __libc_start_call_main
+               |          call_init (inlined)
+               |          __libc_start_main_impl (inlined)
+               |          _start
+               |          
+                --0.00%--internal_signal_restore_set (inlined)
+                          __pthread_create_2_1 (inlined)
+                          main
+                          __libc_start_call_main
+                          call_init (inlined)
+                          __libc_start_main_impl (inlined)
+                          _start
+
+     0.00%  sms_app  [kernel.kallsyms]  [k] __amd_pmu_enable_all
+            |
+            ---__amd_pmu_enable_all
+               amd_pmu_enable_all
+               x86_pmu_enable
+               perf_ctx_enable
+               __perf_event_task_sched_in
+               finish_task_switch.isra.0
+               schedule_tail
+               ret_from_fork
+               ret_from_fork_asm
+               __clone3 (inlined)
+               create_thread
+               internal_signal_restore_set (inlined)
+               __pthread_create_2_1 (inlined)
+               main
+               __libc_start_call_main
+               call_init (inlined)
+               __libc_start_main_impl (inlined)
+               _start
+
+
+
+#
+# (Cannot load tips.txt file, please install perf!)
+#

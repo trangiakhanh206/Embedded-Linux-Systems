@@ -1,0 +1,37 @@
+ASSIGNMENT 02 - TASK 4
+REAL-TIME JITTER ANALYSIS
+=================================================================
+Metric                     SCHED_OTHER        SCHED_FIFO
+count                         1021.000          1021.000
+min                             46.220             6.777
+avg                            228.032            17.005
+max                            953.648           330.581
+p99                            845.043            59.992
+
+Units: microseconds (us)
+P99 method: linear interpolation (N-1 method)
+
+P99 improvement (FIFO vs OTHER): 92.90%
+Result: FIFO has lower P99 jitter.
+
+HISTOGRAM - SCHED_OTHER
+---------------------------------------------
+   0-25   us :    0 (  0.00%)
+  25-50   us :    1 (  0.10%)
+  50-100  us :  390 ( 38.20%)
+ 100-250  us :  174 ( 17.04%)
+ 250-500  us :  412 ( 40.35%)
+ 500-1000 us :   44 (  4.31%)
+Negative jitter : 0
+>= 1000 us      : 0
+
+HISTOGRAM - SCHED_FIFO
+---------------------------------------------
+   0-25   us :  925 ( 90.60%)
+  25-50   us :   62 (  6.07%)
+  50-100  us :   28 (  2.74%)
+ 100-250  us :    3 (  0.29%)
+ 250-500  us :    3 (  0.29%)
+ 500-1000 us :    0 (  0.00%)
+Negative jitter : 0
+>= 1000 us      : 0

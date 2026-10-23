@@ -1,0 +1,6 @@
+SMS Sensor Driver Statistics
+============================
+Read count       : 119
+Last temperature : 29.1 C
+Last humidity    : 77.3 %
+Driver uptime    : 415 seconds

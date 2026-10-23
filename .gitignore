@@ -1,0 +1,36 @@
+# Temporary files
+*~
+*.swp
+*.swo
+*.bak
+*.backup
+*.tmp
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Intermediate build files
+*.o
+*.cmd
+*.mod
+*.mod.c
+modules.order
+Module.symvers
+
+# Editor configurations
+.vscode/
+.idea/
+
+# Performance binary data
+perf.data
+perf.data.old
+perf_initial.data
+
+# Sensitive files
+.env
+.env.*
+*.pem
+*.key
+id_rsa
+id_ed25519

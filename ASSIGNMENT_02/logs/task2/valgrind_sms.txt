@@ -1,0 +1,15 @@
+==16178== Memcheck, a memory error detector
+==16178== Copyright (C) 2002-2024, and GNU GPL'd, by Julian Seward et al.
+==16178== Using Valgrind-3.26.0 and LibVEX; rerun with -h for copyright info
+==16178== Command: ./output/host/sms_app -i 500 -t 40 -h 80 -d 0 -v
+==16178== Parent PID: 6427
+==16178== 
+==16178== 
+==16178== HEAP SUMMARY:
+==16178==     in use at exit: 0 bytes in 0 blocks
+==16178==   total heap usage: 10 allocs, 10 frees, 7,726 bytes allocated
+==16178== 
+==16178== All heap blocks were freed -- no leaks are possible
+==16178== 
+==16178== For lists of detected and suppressed errors, rerun with: -s
+==16178== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
